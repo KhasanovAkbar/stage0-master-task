@@ -122,54 +122,34 @@ public class ArrayTasks {
      * arr = [[3, 1, 2,], [3,2]] -> [[2, 3], [1, 2, 3]] arr = [[5, 4], [7]]       -> [[7], [4, 5]]
      */
     public int[][] sortRaggedArray(int[][] arr) {
-
-        for (int[] ints : arr) {
-            quickSort(ints, 0, ints.length - 1);
-        }
-
-        int size = 0;
-        for (int[] ints : arr) {
-            size++;
-        }
-        int[] newArr = new int[size];
-        for (int i = 0; i < newArr.length; i++) {
-            newArr[i] = arr[i].length;
-        }
-
-        quickSort(newArr, 0, newArr.length - 1);
+        sortRowsByLength(arr);
+        sortElementsInRows(arr);
         return arr;
     }
 
-    private void quickSort(int[] arrs, int low, int high) {
-
-        if (low < high) {
-            int pi = partitions(arrs, low, high);
-
-            quickSort(arrs, low, pi - 1);
-            quickSort(arrs, pi + 1, high);
-        }
-    }
-
-    private int partitions(int[] arrs, int low, int high) {
-        int pivot = arrs[high];
-
-        int i = low - 1;
-        for (int j = low; j <= high - 1; j++) {
-            if (arrs[j] < pivot) {
-                i++;
-                swap(arrs, i, j);
+    private static void sortRowsByLength(int[][] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j].length > arr[j + 1].length) {
+                    int[] temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
             }
         }
-        swap(arrs, i + 1, high);
-        return (i + 1);
     }
 
-    private void swap(int[] arr, int i, int j) {
-
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
+    private static void sortElementsInRows(int[][] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length - 1; j++) {
+                for (int k = 0; k < arr[i].length - j - 1; k++) {
+                    if (arr[i][k] > arr[i][k + 1]) {
+                        int temp = arr[i][k];
+                        arr[i][k] = arr[i][k + 1];
+                        arr[i][k + 1] = temp;
+                    }
+                }
+            }
+        }
     }
-
-
 }
