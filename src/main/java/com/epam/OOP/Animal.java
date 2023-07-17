@@ -2,9 +2,9 @@ package com.epam.OOP;
 
 public class Animal {
 
-    private final String color;
-    private final int numberOfPaws;
-    private final boolean hasFur;
+    private String color;
+    private int numberOfPaws;
+    private boolean hasFur;
 
     public Animal(String color, int numberOfPaws, boolean hasFur) {
         this.color = color;
@@ -15,7 +15,7 @@ public class Animal {
     String getDescription() {
         return "This animal is mostly " + color + ". " +
                 "It has " + numberOfPaws + " " + ((numberOfPaws > 1) ? "paws" : "paw") + " and " +
-                ((hasFur) ? "a" : "no") + " fur";
+                ((hasFur) ? "a" : "no") + " fur.";
 
     }
 
