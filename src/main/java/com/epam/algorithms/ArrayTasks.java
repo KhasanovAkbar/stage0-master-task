@@ -1,7 +1,5 @@
 package com.epam.algorithms;
 
-import java.util.Arrays;
-
 /**
  * Here are the tasks for working with the arrays.
  * <p>
@@ -13,7 +11,7 @@ public class ArrayTasks {
      * Return a String[] array that will list all the seasons of the year, starting with winter.
      */
     public String[] seasonsArray() {
-        return new String[]{"Winter", "Spring", "Summer", "Autumn"};
+        return new String[]{"winter", "spring", "summer", "autumn"};
     }
 
     /**
@@ -25,6 +23,10 @@ public class ArrayTasks {
      * length = 1  -> [1] length = 3  -> [1, 2, 3] length = 5  -> [1, 2, 3, 4, 5]
      */
     public int[] generateNumbers(int length) {
+
+        if (length <= 0)
+            throw new IllegalArgumentException("Length parameter should be greater than 0.");
+
         int[] arr = new int[length];
         for (int i = 0; i < length; i++) {
             arr[i] = i + 1;
@@ -57,11 +59,14 @@ public class ArrayTasks {
      */
     public int findIndexOfNumber(int[] arr, int number) {
 
-        for (int i : arr) {
-            if (i == number)
-                return i;
+        int result = -1;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == number) {
+                result = i;
+                break;
+            }
         }
-        return -1;
+        return result;
     }
 
     /**
@@ -165,7 +170,6 @@ public class ArrayTasks {
         arr[i] = arr[j];
         arr[j] = temp;
     }
-
 
 
 }

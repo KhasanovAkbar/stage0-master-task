@@ -13,7 +13,6 @@ public class Pyramid {
             for (int j = 2; j <= cathetusLength ; j++) {
                 if (i - j >= 0)
                     System.out.print(j);
-                else System.out.print(" ");
             }
             System.out.println();
 

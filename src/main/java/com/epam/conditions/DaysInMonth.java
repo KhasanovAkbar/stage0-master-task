@@ -5,7 +5,7 @@ public class DaysInMonth {
     public void printDays(int year, int month) {
 
         if (year < 0 || month < 1 || month > 12) {
-            System.out.println("Invalid date");
+            System.out.println("invalid date");
         } else {
             int daysInMonth;
             if (month == 2 && isLeapYear(year)) {
@@ -14,7 +14,7 @@ public class DaysInMonth {
                 daysInMonth = getDaysInMonth(month);
             }
 
-            System.out.println("Number of days: " + daysInMonth);
+            System.out.println(daysInMonth);
         }
 
     }
