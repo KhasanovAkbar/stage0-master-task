@@ -27,11 +27,5 @@ public class DaysInMonth {
         int[] daysPerMonth = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         return daysPerMonth[month - 1];
     }
-
-    public static void main(String[] args) {
-
-        DaysInMonth d = new DaysInMonth();
-        d.printDays(-2012, 3);
-    }
 }
 

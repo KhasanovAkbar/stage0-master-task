@@ -166,42 +166,6 @@ public class ArrayTasks {
         arr[j] = temp;
     }
 
-    public static void main(String[] args) {
-        ArrayTasks arrayTasks = new ArrayTasks();
 
-        //season array
-        String[] strings = arrayTasks.seasonsArray();
-        System.out.println(Arrays.toString(strings));
-
-        //generateNumbers
-        int[] ints = arrayTasks.generateNumbers(1);
-        System.out.println(Arrays.toString(ints));
-
-        //totalSum
-        int[] a = {1, 2, 3, 4, 5};
-        System.out.println(arrayTasks.totalSum(a));
-
-        //findIndexOfNumber
-        System.out.println(arrayTasks.findIndexOfNumber(a, 1));
-
-        //reverseArray
-        String[] temp = {"Nick", "Bob"};
-        System.out.println(Arrays.toString(arrayTasks.reverseArray(temp)));
-
-        //getOnlyPositiveNumbers
-        int[] a1 = {1, 2, 3};
-        System.out.println(Arrays.toString(arrayTasks.getOnlyPositiveNumbers(a1)));
-
-        //sortRaggedArray
-        int[][] matrix = {
-                {3, 1, 2, 1},
-                {0, 5, 1},
-                {7}
-        };
-        int[][] ints1 = arrayTasks.sortRaggedArray(matrix);
-        for (int i = 0; i < ints1.length; i++) {
-            System.out.println(Arrays.toString(ints1[i]));
-        }
-    }
 
 }
